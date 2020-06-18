@@ -41,11 +41,12 @@ class SpecifyAmountFragment : Fragment(), View.OnClickListener {
     override fun onClick(v: View?) {
         when(v!!.id){
             R.id.send_btn -> {
-                if(!TextUtils.isEmpty(input_amount.text.toString())){
-
+                var amountStr=input_amount.text.toString()
+                if(!TextUtils.isEmpty(amountStr)){
+                    //val amount = amountStr.toInt()
                   //  val amount = Money(BigDecimal(input_amount.text.toString()))
                     val bundle = bundleOf(
-                        "recipient" to
+                        "amount" to
                         input_amount.text.toString()
                     )
                     navController!!.navigate(
